@@ -3,7 +3,7 @@
     <div class="login_box">
       <!-- 头像区域 -->
       <div class="avater_box">
-        <img src="../assets/logo.png" alt="">
+        <img src="../assets/img/logo.png" alt="">
       </div>
 
       <!-- 登录表单区域 -->
