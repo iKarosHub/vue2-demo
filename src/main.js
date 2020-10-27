@@ -9,8 +9,8 @@ import './assets/css/global.css'
 
 import axios from 'axios';
 // 配置请求的根路径
-axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
-// axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/'
+// axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
+axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/'
 // axios拦截器
 // 通过axios请求拦截器添加token，保证拥有获取数据的权限
 axios.interceptors.request.use(config => {
