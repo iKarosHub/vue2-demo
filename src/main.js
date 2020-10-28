@@ -38,7 +38,7 @@ Vue.component('tree-table', TreeTable)
 Vue.use(VueQuillEditor)
 
 // 过滤器
-Vue.filter('dateForamt', originVal => {
+Vue.filter('dateFormat', originVal => {
   const dt = new Date(originVal*1000);
   
   const y = dt.getFullYear()

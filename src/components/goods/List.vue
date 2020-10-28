@@ -28,7 +28,7 @@
         <el-table-column label="商品价格(元)" prop="goods_price" width="110px"></el-table-column>
         <el-table-column label="商品重量" prop="goods_weight" width="70px"></el-table-column>
         <el-table-column label="商品时间" prop="add_time" v-slot='scope' width="170px">
-          {{scope.row.add_time | dateForamt}}
+          {{scope.row.add_time | dateFormat}}
         </el-table-column>
         <el-table-column label="操作" v-slot= "scope" width="130px">
           <el-button type="primary" icon="el-icon-edit" size="mini"></el-button>

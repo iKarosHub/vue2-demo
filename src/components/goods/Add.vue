@@ -232,7 +232,6 @@ export default {
     // -------------上传图片功能--------------------
     // 图片预览事件
     handlePreview(file){
-      // console.log(file);
       this.previewPath = file.response.data.url;
       this.previewVisible = true;
       // console.log(this.previewPath);
@@ -254,7 +253,7 @@ export default {
     handleSuccess(response){
       console.log(response);
       // 1、拼接的到一个图片信息对象
-      const picInfo = { pic: '/' + response.data.tmp_path }
+      const picInfo = { pic: response.data.tmp_path }
       // 2、将图片信息对象，push到pics数组中
       this.addForm.pics.push(picInfo);
       console.log(this.addForm);
