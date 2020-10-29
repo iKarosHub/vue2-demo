@@ -10,6 +10,7 @@
     <!-- 卡片视图 -->
     <el-card>
       <!-- 为Echarts准备一个具备大小的DOM -->
+
       <div id="main" style="width: 900px; height: 400px"></div>
     </el-card>
   </div>
@@ -18,68 +19,65 @@
 
 <script>
 // 1、导入echarts
-import echarts from 'echarts'
-import _ from 'lodash'
+import echarts from "echarts";
+import _ from "lodash";
 
 export default {
   data() {
     return {
       options: {
         title: {
-          text: '用户来源'
+          text: "用户来源",
         },
         tooltip: {
-          trigger: 'axis',
+          trigger: "axis",
           axisPointer: {
-            type: 'cross',
+            type: "cross",
             label: {
-              backgroundColor: '#E9EEF3'
-            }
-          }
+              backgroundColor: "#E9EEF3",
+            },
+          },
         },
         grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
+          left: "3%",
+          right: "4%",
+          bottom: "3%",
+          containLabel: true,
         },
         xAxis: [
           {
-            boundaryGap: false
-          }
+            boundaryGap: false,
+          },
         ],
         yAxis: [
           {
-            type: 'value'
-          }
-        ]
-      }
-    }
+            type: "value",
+          },
+        ],
+      },
+    };
   },
-  created() {
-      
-  },
+  created() {},
   async mounted() {
     // 基于准备好的dom，初始化echarts实例
-    var myChart = echarts.init(document.getElementById('main'));
+    var myChart = echarts.init(document.getElementById("main"));
 
-    const {data: res} = await this.$http.get('reports/type/1')
+    const { data: res } = await this.$http.get("reports/type/1");
     // console.log(res.data);
-    if(res.meta.status !== 200){
+    if (res.meta.status !== 200) {
       return this.$message.error(res.meta.msg);
     }
     this.$message.success(res.meta.msg);
-    
+
     // 指定图表的配置项和数据
-    const result = _.merge(res.data, this.options)
+    const result = _.merge(res.data, this.options);
 
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(result);
-  }
-}
+  },
+};
 </script>
 
 
 <style lang='less' 'scoped'>
-
 </style>
